@@ -43,17 +43,17 @@ public final class NavigationViewModel: ObservableObject {
         withAnimation(animation) {
             navigationType = .push
             let screen: Screen = .init(id: UUID().uuidString, nextScreen: AnyView(screenView))
-            screenStack.push(screen)
+            screenStack.push(screen: screen)
         }
     }
     
-    func pop(to: PopType = .previous) {
+    func pop(to: PopType = .prev) {
         withAnimation(animation) {
             navigationType = .pop
             switch to {
             case .root:
                 screenStack.toRoot()
-            case .previous:
+            case .prev:
                 screenStack.pop()
             }
         }

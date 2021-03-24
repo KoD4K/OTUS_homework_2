@@ -17,7 +17,7 @@ public struct NavigationView<Content>: View where Content: View {
     public init(transitionType: NavigationTransitionType, animation: Animation = .easeOut(duration: 0.3), @ViewBuilder content: @escaping ()-> Content) {
         
         viewModel = NavigationViewModel(withAnimation: animation)
-        self.content = content
+        self.content = content()
         
         switch transitionType {
         case .custom(let transition):

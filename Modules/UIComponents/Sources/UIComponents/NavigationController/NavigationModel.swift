@@ -5,6 +5,8 @@
 //  Created by Evgenii Plenkin on 21.03.2021.
 //
 
+import SwiftUI
+
 struct Screen: Identifiable, Equatable {
     
     let id: String
@@ -29,7 +31,7 @@ struct ScreenStack {
     }
     
     mutating func pop() {
-        screens.popLast()
+        _ = screens.popLast()
     }
     
     mutating func toRoot() {
