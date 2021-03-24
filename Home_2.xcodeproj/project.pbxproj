@@ -20,6 +20,7 @@
 		9E8D9DF1260789FD0086AA03 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9E8D9DF4260789FD0086AA03 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		9E8D9DF6260789FD0086AA03 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9E8D9E0026078F2F0086AA03 /* UIComponents */ = {isa = PBXFileReference; lastKnownFileType = folder; path = UIComponents; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,6 +37,7 @@
 		9E8D9DE1260789FB0086AA03 = {
 			isa = PBXGroup;
 			children = (
+				9E8D9DFF26078EB40086AA03 /* Modules */,
 				9E8D9DEC260789FB0086AA03 /* Home_2 */,
 				9E8D9DEB260789FB0086AA03 /* Products */,
 			);
@@ -67,6 +69,14 @@
 				9E8D9DF4260789FD0086AA03 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		9E8D9DFF26078EB40086AA03 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				9E8D9E0026078F2F0086AA03 /* UIComponents */,
+			);
+			path = Modules;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
