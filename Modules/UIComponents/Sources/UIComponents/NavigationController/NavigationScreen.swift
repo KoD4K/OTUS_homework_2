@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-public struct NavigationView<Content>: View where Content: View {
+public struct NavigationScreen<Content>: View where Content: View {
     
     @ObservedObject var viewModel: NavigationViewModel
     
