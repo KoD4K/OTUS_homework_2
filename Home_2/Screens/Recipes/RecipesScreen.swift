@@ -22,7 +22,7 @@ struct RecipesScreen: View {
                     Spacer()
                 }
                 List(viewModel.items) { item in
-                    PushButton(destination: RecipeScreen()) {
+                    PushButton(destination: RecipeScreen(item: item)) {
                         RecipeCell(item: item)
                             .environmentObject(viewModel)
                             .onAppear() {
