@@ -5,7 +5,6 @@
 //  Created by Evgenii Plenkin on 24.03.2021.
 //
 
-import SwiftUI
 import Network
 import SwiftUI
 import UIComponents

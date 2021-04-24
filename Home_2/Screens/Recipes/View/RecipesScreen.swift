@@ -9,18 +9,24 @@ import SwiftUI
 import UIComponents
 
 struct RecipesScreen: View {
-    
+    var meals:[MealType] = [MealType.salad, MealType.fish]
     @ObservedObject var viewModel: RecipesViewModel = .init()
     
     var body: some View {
         NavigationScreen(transitionType: .custom(.moveAndFade)) {
             VStack {
                 HStack {
-                    Text("Recipes")
+                    Text("Meals")
                         .font(Font.system(size: 30))
                         .padding(.leading, 20)
                     Spacer()
                 }
+                Picker(selection: $viewModel.currentMeal, label: Text("Choose meal's type")) {
+                    ForEach(meals, id: \.self) {
+                        Text($0.rawValue)
+                    }
+                }
+                .pickerStyle(SegmentedPickerStyle())
                 List(viewModel.items) { item in
                     PushButton(destination: RecipeScreen(item: item)) {
                         RecipeCell(item: item)
@@ -34,7 +40,7 @@ struct RecipesScreen: View {
                     }
                     .padding(.trailing, -40)
                 } // List
-                .navigationTitle("Recipes")
+                .navigationTitle("Meals")
                 .onAppear() {
                     viewModel.loadPage()
                 }

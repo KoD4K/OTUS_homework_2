@@ -8,7 +8,20 @@
 import SwiftUI
 import Network
 
+enum MealType: String {
+    case salad = "Salad"
+    case fish = "Fish"
+}
+
 final class RecipesViewModel: ObservableObject {
+    
+    @Published var currentMeal: MealType = .salad {
+        didSet {
+            page = 0
+            items.removeAll()
+            loadPage()
+        }
+    }
     
     @Published private(set) var items: [Recipe] = .init()
     @Published private(set) var page: Int = 0
@@ -21,7 +34,7 @@ final class RecipesViewModel: ObservableObject {
         
         isPageLoading = true
         page += 1
-        RecipeAPI.getRecipe(i: "potato", q: "salad", p: page) { response, error in
+        RecipeAPI.getRecipe(i: "tomato", q: currentMeal.rawValue, p: page) { response, error in
             
             if let results = response?.results {
                 print(results)
