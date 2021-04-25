@@ -22,13 +22,11 @@ struct RecipeCell: View {
                     url: url,
                     placeholder: {ActivityView()}
                 )
+                .frame(minWidth: 0, maxWidth: 50, minHeight: 0, maxHeight: 50)
             }
             VStack(alignment: .leading) {
                 Text(item.title.asStringOrEmpty.trim())
                     .font(.headline)
-                Text(item.ingredients.asStringOrEmpty)
-                    .font(.callout)
-                    .foregroundColor(.gray)
                 if viewModel.isPageLoading && viewModel.items.isLast(item) {
                     Divider()
                     HStack {
